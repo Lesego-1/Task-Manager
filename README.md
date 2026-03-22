@@ -94,5 +94,3 @@ This project demonstrates **end-to-end full-stack skills** without relying on he
 - **Responsive, professional UI** that mirrors modern SaaS platforms
 - **Clean, maintainable backend code** with modular controllers and middleware
 - **Practical database integration** with PostgreSQL for production-ready data management
-
-It’s ideal for showcasing to **recruiters, hiring managers, or technical leads** as evidence of your ability to deliver a **full-stack, production-ready web application**.
