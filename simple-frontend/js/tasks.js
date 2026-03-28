@@ -1,5 +1,5 @@
-const TASK_API = "http://localhost:5000/api/tasks";
-const USER_API = "http://localhost:5000/api/admin/users";
+const TASK_API = "https://task-manager-backend-production-c30d.up.railway.app/api/tasks";
+const USER_API = "https://task-manager-backend-production-c30d.up.railway.app/api/admin/users";
 const token = localStorage.getItem("token");
 const role = localStorage.getItem("role");
 

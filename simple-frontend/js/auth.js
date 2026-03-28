@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://task-manager-backend-production-c30d.up.railway.app/api/auth";
 
 function checkTokenExpiry() {
     const token = localStorage.getItem("token");
