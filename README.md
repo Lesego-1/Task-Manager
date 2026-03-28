@@ -70,8 +70,25 @@ This Task Manager is a **full-stack demonstration of web development best practi
 ### Dashboard
 ![Dashboard](path/to/dashboard-user.png)
 
-### Task Details
-![Task Details](path/to/task-details.png)
+### Swagger API - Auth Endpoints
+#### Register
+![Swagger Register Endpoint](path/to/swagger-register.png)
+
+#### Login
+![Swagger Login Endpoint](path/to/swagger-login.png)
+
+### Swagger API - Task Endpoints
+#### Create Task
+![Swagger Create Task Endpoint](path/to/swagger-create-task.png)
+
+#### Get Tasks
+![Swagger Get Tasks Endpoint](path/to/swagger-get-tasks.png)
+
+#### Update Task
+![Swagger Update Task Endpoint](path/to/swagger-update-task.png)
+
+#### Delete Task
+![Swagger Delete Task Endpoint](path/to/swagger-delete-task.png)
 
 ---
 
