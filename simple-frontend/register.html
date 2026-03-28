@@ -4,19 +4,133 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register - Task Manager</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Create Account</h1>
-        <form id="register-form" class="flex flex-col gap-4">
-            <input type="email" id="reg-email" placeholder="Email" class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400" required>
-            <input type="password" id="reg-password" placeholder="Password" class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400" required>
-            <button type="submit" class="bg-green-500 text-white p-3 rounded-md hover:bg-green-600 transition">Register</button>
+<body class="animated-bg min-h-screen flex items-center justify-center p-4">
+    <!-- Floating Bubbles Background -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <!-- Cursor Trail Container -->
+    <div id="cursor-container"></div>
+
+    <!-- Main Card -->
+    <div class="glass-card w-full max-w-md p-8 md:p-12">
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#7FC3FF] to-[#E04582] mb-4 shadow-lg animate-pulse">
+                <i data-lucide="user-plus" class="w-8 h-8 text-white"></i>
+            </div>
+            <h1 class="text-3xl font-bold text-[#2D3748] mb-2">Create Account</h1>
+            <p class="text-gray-600">Start your productivity journey</p>
+        </div>
+
+        <form id="register-form" class="flex flex-col gap-6">
+            <div class="input-group">
+                <i data-lucide="user" class="input-icon w-5 h-5"></i>
+                <input type="text" id="reg-name" placeholder="Full Name" class="modern-input">
+            </div>
+
+            <div class="input-group">
+                <i data-lucide="mail" class="input-icon w-5 h-5"></i>
+                <input type="email" id="reg-email" placeholder="Email address" class="modern-input" required>
+            </div>
+
+            <div class="input-group">
+                <i data-lucide="lock" class="input-icon w-5 h-5"></i>
+                <input type="password" id="reg-password" placeholder="Password" class="modern-input" required>
+            </div>
+
+            <div class="input-group">
+                <i data-lucide="shield-check" class="input-icon w-5 h-5"></i>
+                <input type="password" id="reg-confirm" placeholder="Confirm Password" class="modern-input">
+            </div>
+
+            <div class="flex items-start gap-2 text-sm">
+                <input type="checkbox" id="terms" class="w-4 h-4 mt-0.5 rounded border-gray-300 text-[#E04582] focus:ring-[#E04582]" required>
+                <label for="terms" class="text-gray-600">
+                    I agree to the <a href="#" class="modern-link">Terms of Service</a> and <a href="#" class="modern-link">Privacy Policy</a>
+                </label>
+            </div>
+
+            <button type="submit" class="gradient-btn w-full text-lg flex items-center justify-center gap-2 group">
+                <span>Get Started</span>
+                <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+            </button>
         </form>
-        <p class="mt-4 text-center text-gray-600">Already have an account? <a href="index.html" class="text-blue-500 hover:underline">Login</a></p>
+
+        <div class="mt-8 text-center">
+            <p class="text-gray-600">
+                Already have an account? 
+                <a href="index.html" class="modern-link">Sign in</a>
+            </p>
+        </div>
     </div>
+
     <script src="js/auth.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Cursor Trail Effect
+        const cursorContainer = document.getElementById('cursor-container');
+        
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.85) {
+                createTrail(e.clientX, e.clientY);
+            }
+        });
+
+        function createTrail(x, y) {
+            const trail = document.createElement('div');
+            trail.className = 'cursor-trail';
+            trail.style.left = x + 'px';
+            trail.style.top = y + 'px';
+            
+            const colors = ['#7FC3FF', '#FF8EB7', '#BADFFF', '#FFCCDE'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            trail.style.background = `radial-gradient(circle, ${color}, transparent)`;
+            trail.style.width = (Math.random() * 15 + 10) + 'px';
+            trail.style.height = trail.style.width;
+            
+            cursorContainer.appendChild(trail);
+            
+            setTimeout(() => {
+                trail.style.transform = `translate(-50%, -50%) scale(2)`;
+                trail.style.opacity = '0';
+            }, 10);
+            
+            setTimeout(() => trail.remove(), 1000);
+        }
+
+        // Click ripple effect
+        document.addEventListener('click', (e) => {
+            const ripple = document.createElement('div');
+            ripple.style.position = 'fixed';
+            ripple.style.left = e.clientX + 'px';
+            ripple.style.top = e.clientY + 'px';
+            ripple.style.width = '0';
+            ripple.style.height = '0';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(127, 195, 255, 0.4)';
+            ripple.style.transform = 'translate(-50%, -50%)';
+            ripple.style.pointerEvents = 'none';
+            ripple.style.zIndex = '9998';
+            ripple.style.transition = 'all 0.6s ease-out';
+            
+            document.body.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.style.width = '100px';
+                ripple.style.height = '100px';
+                ripple.style.opacity = '0';
+            }, 10);
+            
+            setTimeout(() => ripple.remove(), 600);
+        });
+    </script>
 </body>
 </html>
