@@ -62,33 +62,33 @@ This Task Manager is a **full-stack demonstration of web development best practi
 ## Screenshots
 
 ### Login Page
-![Login Page](path/to/login-screenshot.png)
+![Login Page](https://github.com/Lesego-1/Task-Manager/blob/main/login.png?raw=true)
 
 ### Register Page
-![Register Page](path/to/register-screenshot.png)
+![Register Page](https://github.com/Lesego-1/Task-Manager/blob/main/register.png?raw=true)
 
 ### Dashboard
-![Dashboard](path/to/dashboard-user.png)
+![Dashboard](https://github.com/Lesego-1/Task-Manager/blob/main/dashboard.png?raw=true)
 
 ### Swagger API - Auth Endpoints
 #### Register
-![Swagger Register Endpoint](path/to/swagger-register.png)
+![Swagger Register Endpoint](https://github.com/Lesego-1/Task-Manager/blob/main/swagger_register.png?raw=true)
 
 #### Login
-![Swagger Login Endpoint](path/to/swagger-login.png)
+![Swagger Login Endpoint](https://github.com/Lesego-1/Task-Manager/blob/main/swagger_login.png?raw=true)
 
 ### Swagger API - Task Endpoints
 #### Create Task
-![Swagger Create Task Endpoint](path/to/swagger-create-task.png)
+![Swagger Create Task Endpoint](https://github.com/Lesego-1/Task-Manager/blob/main/swagger_task_post.png?raw=true)
 
 #### Get Tasks
-![Swagger Get Tasks Endpoint](path/to/swagger-get-tasks.png)
+![Swagger Get Tasks Endpoint](https://github.com/Lesego-1/Task-Manager/blob/main/swagger_task_get.png?raw=true)
 
 #### Update Task
-![Swagger Update Task Endpoint](path/to/swagger-update-task.png)
+![Swagger Update Task Endpoint](https://github.com/Lesego-1/Task-Manager/blob/main/swagger_task_put.png?raw=true)
 
 #### Delete Task
-![Swagger Delete Task Endpoint](path/to/swagger-delete-task.png)
+![Swagger Delete Task Endpoint](https://github.com/Lesego-1/Task-Manager/blob/main/swagger_task_delete.png?raw=true)
 
 ---
 
