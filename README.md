@@ -70,8 +70,25 @@ This Task Manager is a **full-stack demonstration of web development best practi
 ### Dashboard
 ![Dashboard](path/to/dashboard-user.png)
 
-### Task Details
-![Task Details](path/to/task-details.png)
+### Swagger API - Auth Endpoints
+#### Register
+![Swagger Register Endpoint](path/to/swagger-register.png)
+
+#### Login
+![Swagger Login Endpoint](path/to/swagger-login.png)
+
+### Swagger API - Task Endpoints
+#### Create Task
+![Swagger Create Task Endpoint](path/to/swagger-create-task.png)
+
+#### Get Tasks
+![Swagger Get Tasks Endpoint](path/to/swagger-get-tasks.png)
+
+#### Update Task
+![Swagger Update Task Endpoint](path/to/swagger-update-task.png)
+
+#### Delete Task
+![Swagger Delete Task Endpoint](path/to/swagger-delete-task.png)
 
 ---
 
@@ -94,3 +111,74 @@ This project demonstrates **end-to-end full-stack skills** without relying on he
 - **Responsive, professional UI** that mirrors modern SaaS platforms
 - **Clean, maintainable backend code** with modular controllers and middleware
 - **Practical database integration** with PostgreSQL for production-ready data management
+
+---
+
+## 🚧 Current Application Status
+
+### ✅ Backend Functionality (Fully Working)
+
+All core task management features are **fully functional on the backend** and have been successfully tested using tools like **Postman** and direct API requests.
+
+The following endpoints work as expected:
+
+* **Create Task** → `POST /api/tasks`
+* **Get Tasks** → `GET /api/tasks`
+* **Update Task** → `PUT /api/tasks/:id`
+* **Delete Task** → `DELETE /api/tasks/:id`
+
+✔ Tasks are correctly:
+
+* Created and stored in the database
+* Retrieved per authenticated user
+* Updated with new values
+* Deleted successfully
+
+Authentication using JWT is also working correctly, and protected routes behave as expected.
+
+---
+
+### 🟡 Frontend Functionality (Partially Working)
+
+The frontend UI is mostly functional and successfully integrates with the backend for:
+
+* ✅ Creating tasks
+* ✅ Fetching and displaying tasks
+
+However, the following features are **currently not working as expected in the UI**:
+
+* ❌ Editing tasks (UI interaction does not persist changes)
+* ❌ Deleting tasks (button interaction does not trigger expected behavior)
+
+> ⚠️ Important: These features **do work on the backend**, but there is an issue with the frontend event handling or API interaction that still needs to be resolved.
+
+---
+
+### 🔧 Next Steps
+
+* Debug frontend event listeners for edit and delete buttons
+* Verify API requests in the browser (Network tab)
+* Ensure correct DOM bindings and data flow
+* Replace prompt-based editing with a proper UI modal (planned improvement)
+
+---
+
+### 🧪 Testing Notes
+
+All backend endpoints were tested using:
+
+* Postman
+* Manual HTTP requests
+
+Frontend testing is ongoing in the browser.
+
+---
+
+### 📌 Summary
+
+| Feature     | Backend | Frontend |
+| ----------- | ------- | -------- |
+| Create Task | ✅       | ✅        |
+| View Tasks  | ✅       | ✅        |
+| Edit Task   | ✅       | ❌        |
+| Delete Task | ✅       | ❌        |

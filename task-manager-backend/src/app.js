@@ -5,6 +5,7 @@ const pool = require("./config/db");
 const authRoutes = require('./routes/authRoutes');
 const authenticate = require('./middleware/authMiddleware');
 const taskRoutes = require('./routes/taskRoutes');
+const swaggerSetup = require('./config/swagger');
 
 pool.query('SELECT NOW()', (err, res) => {
     if (err) console.error('DB connection error:', err);
@@ -23,6 +24,8 @@ app.get("/", (req, res) => {
 
 app.use('/api/auth', authRoutes);
 console.log(`Auth Routes: ${authRoutes}`)
+
+swaggerSetup(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

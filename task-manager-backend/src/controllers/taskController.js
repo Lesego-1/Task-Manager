@@ -43,7 +43,7 @@ const updateTask = async (req, res) => {
         if (check.rows.length === 0) return res.status(404).json({ error: 'Task not found' });
 
         const result = await pool.query(
-            'UPDATE tasks SET title = $1, description = $2, completed - $3, updated_at = NOW() WHERE id = $4 RETURNING *',
+            'UPDATE tasks SET title = $1, description = $2, completed = $3, updated_at = NOW() WHERE id = $4 RETURNING *',
             [title || check.rows[0].title, description || check.rows[0].description, completed ?? check.rows[0].completed, taskId]
         );
         res.json(result.rows[0]);
